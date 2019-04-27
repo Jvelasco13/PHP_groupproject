@@ -1,0 +1,61 @@
+Contributor - ConID,ConName
+File - FileID,Version
+FreeQueue - FreeID, FQUSerID,FQFileID
+PaidQueue - PaidID, 
+Song - SongID, SongTitle
+SongCon - CsongID, CconID, Role, AssociatedAct
+SongFile - SFfileID,SFsongID
+User - UserID,UserName
+
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| FreeID   | char(5) | NO   | PRI | NULL    |       |
+| FQUserID | char(5) | NO   | MUL | NULL    |       |
+| FQFileID | char(5) | NO   | MUL | NULL    |       |
++----------+---------+------+-----+---------+-------+
+
+MariaDB [z1817177]> DESCRIBE PaidQueue;
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| PaidID   | char(5) | NO   | PRI | NULL    |       |
+| PQUserID | char(5) | NO   | MUL | NULL    |       |
+| PQFileID | char(5) | NO   | MUL | NULL    |       |
++----------+---------+------+-----+---------+-------+
+
+MariaDB [z1817177]> DESCRIBE Song;
++-----------+----------+------+-----+---------+-------+
+| Field     | Type     | Null | Key | Default | Extra |
++-----------+----------+------+-----+---------+-------+
+| SongID    | char(5)  | NO   | PRI | NULL    |       |
+| SongTitle | char(30) | YES  |     | NULL    |       |
+| Genre     | char(10) | YES  |     | NULL    |       |
++-----------+----------+------+-----+---------+-------+
+
+MariaDB [z1817177]> DESCRIBE SongCon;
++---------------+----------+------+-----+---------+-------+
+| Field         | Type     | Null | Key | Default | Extra |
++---------------+----------+------+-----+---------+-------+
+| CsongID       | char(5)  | YES  | MUL | NULL    |       |
+| CconID        | char(5)  | YES  | MUL | NULL    |       |
+| Role          | char(20) | YES  |     | NULL    |       |
+| AssociatedAct | char(20) | YES  |     | NULL    |       |
++---------------+----------+------+-----+---------+-------+
+
+MariaDB [z1817177]> DESCRIBE SongFile;
++----------+---------+------+-----+---------+-------+
+| Field    | Type    | Null | Key | Default | Extra |
++----------+---------+------+-----+---------+-------+
+| FileKey  | char(5) | NO   | PRI | NULL    |       |
+| SFsongID | char(5) | NO   | MUL | NULL    |       |
+| SFfileID | char(5) | NO   | MUL | NULL    |       |
++----------+---------+------+-----+---------+-------+
+
+MariaDB [z1817177]> DESCRIBE User;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| UserID   | char(5)  | NO   | PRI | NULL    |       |
+| Username | char(20) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+

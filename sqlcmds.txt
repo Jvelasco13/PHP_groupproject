@@ -1,0 +1,17 @@
+SELECT SongTitle FROM SongCon INNER JOIN Contributor  ON SongCon.CconID = Contributor.ConID INNER JOIN Song ON SongCon.CsongID = Song.SongID WHERE ConName = 'Ronnie James Dio';
+
+SELECT Username,SongTitle,Version FROM FreeQueue INNER JOIN SongFile ON FreeQueue.FQFileID = SongFile.FileKey INNER JOIN Song ON SongFile.SFsongID = Song.SongID INNER JOIN File ON SongFile.SFfileID = File.FileID INNER JOIN User ON FreeQueue.FQUSerID = User.UserID;
+
+SELECT ConName,SongTitle,Genre FROM SongCon INNER JOIN Song ON SongCon.CsongID = Song.SongID INNER JOIN Contributor ON SongCon.CconID = Contributor.ConID;
+
+SELECT DISTINCT SongTitle FROM  Song;
+
+SELECT ConName,SongTitle FROM SongCon INNER JOIN Song ON SongCon.CsongID = Song.SongID INNER JOIN Contributor ON SongCon.CconID = Contributor.ConID;
+
+SELECT ConName FROM  Contributer;
+
+SELECT AssociatedAct,ConName FROM SongCon INNER JOIN Song ON SongCon.CsongID = Song.SongID INNER JOIN Contributor ON SongCon.CconID = Contributor.ConID;
+
+SELECT SongTitle,ConName FROM SongCon INNER JOIN Song ON SongCon.CsongID = Song.SongID INNER JOIN Contributor ON SongCon.CconID = Contributor.ConID;
+
+SELECT AssociatedAct,SongTitle,ConName FROM SongCon INNER JOIN Song ON SongCon.CsongID = Song.SongID INNER JOIN Contributor ON SongCon.CconID = Contributor.ConID;
