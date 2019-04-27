@@ -1,0 +1,9 @@
+Contributor - ConID,ConName
+File - FileID,Version
+FreeQueue - FreeID, FQFileID, FQUSerID
+PaidQueue - PaidID, PQFileID, PQUserID
+Song - SongID, SongTitle
+SongCon - CsongID, CconID, Role, AssociatedAct
+SongFile - SFfileID,SFsongID
+User - UserID,UserName
+
